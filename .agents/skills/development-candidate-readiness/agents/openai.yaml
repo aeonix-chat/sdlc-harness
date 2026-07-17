@@ -1,0 +1,4 @@
+interface:
+  display_name: "Development Candidate Readiness"
+  short_description: "Decide if a candidate is ready for Production"
+  default_prompt: "Use $development-candidate-readiness to assemble candidate evidence and decide candidate, rework, hold, or stop."

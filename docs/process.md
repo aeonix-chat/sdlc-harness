@@ -21,9 +21,12 @@ not interpret the table as a mandatory waterfall sequence.
 | Stage | Workflow | Skill | Minimum evidence |
 | --- | --- | --- | --- |
 | All stages | Turn checks, reviews, observations, and measurements into bounded decision support | [`validation-and-evidence`](../.agents/skills/validation-and-evidence/SKILL.md) | Claim, subject, boundary, procedure, retained evidence, finding, limitations, and residual risk |
+| All stages | Classify incoming work and select the smallest safe lifecycle route | [`work-intake-and-routing`](../.agents/skills/work-intake-and-routing/SKILL.md) | Need, affected baseline, uncertainty/risk assessment, selected route, rationale, required artifacts, authority, and next action |
 | [Concept](stages/concept.md) | Clarify the actual need and decision | [`interview-me`](../.agents/skills/interview-me/SKILL.md) | Confirmed intent, outcome, users, constraints, and non-goals |
 | [Concept](stages/concept.md) | Explore and compare solution classes | [`idea-refine`](../.agents/skills/idea-refine/SKILL.md) | Concept one-pager, alternatives, assumptions, MVP boundary, and open questions |
 | [Concept](stages/concept.md) / [Development](stages/development.md) | Formalize an approved direction | [`spec-driven-development`](../.agents/skills/spec-driven-development/SKILL.md) | Approved specification and success criteria; technical sections mature in Development |
+| [Concept](stages/concept.md) / [Development](stages/development.md) / [Support](stages/support.md) | Define requirements and maintain lifecycle traceability | [`requirements-and-traceability`](../.agents/skills/requirements-and-traceability/SKILL.md) | Controlled requirements and acceptance baseline, allocations, bidirectional links, change impact, coverage, deviations, and risks |
+| [Development](stages/development.md) | Evaluate architecture against concerns, scenarios, alternatives, and risk | [`architecture-evaluation`](../.agents/skills/architecture-evaluation/SKILL.md) | Scoped architecture description, scenarios, evaluation evidence, trade-offs, findings, actions, and sufficiency verdict |
 | [Development](stages/development.md) | Decompose an approved change | [`planning-and-task-breakdown`](../.agents/skills/planning-and-task-breakdown/SKILL.md) | Ordered tasks, dependencies, checkpoints, and acceptance criteria |
 | [Development](stages/development.md) | Ground technology decisions in current primary sources | [`source-driven-development`](../.agents/skills/source-driven-development/SKILL.md) | Verified source references, applicable constraints, and explicitly unverified assumptions |
 | [Development](stages/development.md) | Design APIs, module boundaries, and public contracts | [`api-and-interface-design`](../.agents/skills/api-and-interface-design/SKILL.md) | Versioned contract, compatibility decisions, validation, and error semantics |
@@ -31,6 +34,7 @@ not interpret the table as a mandatory waterfall sequence.
 | [Development](stages/development.md) | Drive behavior changes with tests | [`test-driven-development`](../.agents/skills/test-driven-development/SKILL.md) | Failing test, passing implementation, and regression coverage |
 | [Development](stages/development.md) / [Utilization](stages/utilization.md) / [Support](stages/support.md) | Diagnose unexpected behavior after immediate operational safety and recovery are controlled | [`debugging-and-error-recovery`](../.agents/skills/debugging-and-error-recovery/SKILL.md) | Reproduction, root cause, fix, and recurrence guard linked to the operational event when applicable |
 | [Development](stages/development.md) / [Production](stages/production.md) | Assess integration readiness | [`code-review-and-quality`](../.agents/skills/code-review-and-quality/SKILL.md) | Findings by severity, verification assessment, and verdict |
+| [Development](stages/development.md) | Assemble the exact candidate package and decide Development readiness | [`development-candidate-readiness`](../.agents/skills/development-candidate-readiness/SKILL.md) | Candidate identity, reconciled scope/traceability, architecture and review disposition, candidate-bound V&V, risks, transition prerequisites, and decision |
 | [Development](stages/development.md) | Reduce implementation complexity without changing behavior | [`code-simplification`](../.agents/skills/code-simplification/SKILL.md) | Behavior-preserving simplification and passing regression evidence |
 | [Development](stages/development.md) / [Utilization](stages/utilization.md) | Diagnose and improve performance against requirements | [`performance-optimization`](../.agents/skills/performance-optimization/SKILL.md) | Baseline, profile, change, and measured comparison |
 | All stages | Identify and reduce software security risk | [`security-and-hardening`](../.agents/skills/security-and-hardening/SKILL.md) | Threats, controls, security checks, and accepted residual risk |
@@ -52,11 +56,14 @@ not interpret the table as a mandatory waterfall sequence.
 
 Use these combinations as defaults, tailoring them to risk:
 
-- **New capability:** specification → planning → incremental implementation →
-  TDD → security → review → validation and evidence → CI/CD → artifact integrity
+- **New capability:** intake/routing → requirements and specification →
+  architecture evaluation as needed → planning → incremental implementation →
+  TDD → security → review → validation and evidence → Development candidate
+  readiness → CI/CD → artifact integrity
   and provenance → operational acceptance → release and promotion → launch → documentation.
-- **Bug fix:** debugging → TDD → incremental implementation → review → launch
-  controls proportional to impact.
+- **Bug fix:** intake/routing → debugging → requirements impact → TDD →
+  incremental implementation → review → validation and candidate readiness →
+  launch controls proportional to impact.
 - **Security-sensitive change:** specification → threat-focused security
   assessment → planning → implementation and TDD → security verification →
   review → controlled launch.
@@ -78,8 +85,7 @@ Use these combinations as defaults, tailoring them to risk:
 The imported source set does not provide complete workflows for:
 
 - business or mission analysis before a software specification;
-- requirements traceability across all lifecycle artifacts;
-- architecture evaluation as a standalone workflow;
+- project-specific requirements/traceability stores and automated coverage reports;
 - service objectives, indicator definitions, telemetry quality, incident
   command, continuity exercises, quality-in-use measurement, and recurring
   operational decisions;

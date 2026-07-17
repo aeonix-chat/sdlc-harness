@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture Evaluation"
+  short_description: "Evaluate architecture against concerns and risk"
+  default_prompt: "Use $architecture-evaluation to evaluate architecture decisions, scenarios, alternatives, trade-offs, and residual risk."

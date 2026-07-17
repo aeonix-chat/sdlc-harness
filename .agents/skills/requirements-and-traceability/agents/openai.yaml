@@ -1,0 +1,4 @@
+interface:
+  display_name: "Requirements and Traceability"
+  short_description: "Maintain requirements and end-to-end evidence links"
+  default_prompt: "Use $requirements-and-traceability to define requirements, acceptance methods, and bidirectional lifecycle traceability."

@@ -55,6 +55,14 @@ Stage-specific standards, evidence, and decision criteria are documented in:
   evidence, skill composition, and known coverage gaps.
 - [`docs/validation-and-evidence.md`](docs/validation-and-evidence.md) — common
   claim, assessment, evidence, and assurance-profile contract.
+- [`docs/work-intake-and-routing.md`](docs/work-intake-and-routing.md) —
+  risk- and uncertainty-based routing from incoming work to SDLC workflows.
+- [`docs/requirements-and-traceability.md`](docs/requirements-and-traceability.md)
+  — requirements quality, baselines, change impact, and lifecycle evidence graph.
+- [`docs/architecture-evaluation.md`](docs/architecture-evaluation.md) —
+  concern-, scenario-, alternative-, and risk-based architecture evaluation.
+- [`docs/development-candidate-readiness.md`](docs/development-candidate-readiness.md)
+  — exact candidate assembly, evidence reconciliation, and Development decision.
 - [`docs/artifact-integrity-and-provenance.md`](docs/artifact-integrity-and-provenance.md)
   — artifact identity, composition, provenance, authenticity, and custody.
 - [`docs/release-and-promotion.md`](docs/release-and-promotion.md) — immutable
@@ -72,10 +80,10 @@ Stage-specific standards, evidence, and decision criteria are documented in:
 
 Model version: **0.2 (baseline)**. All six reference stages have a
 standards-grounded workflow, evidence contract, decision criteria, tailoring
-guidance, and skill routing. Native workflows cover validation evidence,
-artifact integrity and provenance, release promotion, and operational
-acceptance; project-specific machine-readable schemas and implementations
-remain integration work. See
+guidance, and skill routing. Native workflows cover work routing, requirements
+traceability, architecture evaluation, candidate readiness, validation evidence,
+artifact integrity and provenance, release promotion, and operational acceptance;
+project-specific machine-readable schemas and implementations remain integration work. See
 the [process map](docs/process.md#known-coverage-gaps).
 
 ## Validation

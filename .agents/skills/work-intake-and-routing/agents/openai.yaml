@@ -1,0 +1,4 @@
+interface:
+  display_name: "Work Intake and Routing"
+  short_description: "Route work by uncertainty, risk, and reversibility"
+  default_prompt: "Use $work-intake-and-routing to classify this change and select the smallest safe SDLC route."

@@ -1,7 +1,7 @@
 # Development Stage
 
 Status: **baseline 0.2**
-Sources reviewed: **2026-07-16**
+Sources reviewed: **2026-07-17**
 
 Navigation: Previous: [Concept](concept.md) ·
 [Lifecycle](../reference-lifecycle.md) · [Process map](../process.md) · Next:
@@ -302,6 +302,9 @@ invalidates stakeholder needs, intended outcomes, or the selected solution class
 
 | Development activity | Skill | How to use it | Limitation |
 | --- | --- | --- | --- |
+| Classify an incoming change and choose its SDLC route | [`work-intake-and-routing`](../../.agents/skills/work-intake-and-routing/SKILL.md) | Select the smallest safe route from intent, uncertainty, consequence, reversibility, and authority before planning or implementation | It does not accept external work, create branches, or grant implementation authority unless the project and user authorize those actions |
+| Define and reconcile requirements and lifecycle traceability | [`requirements-and-traceability`](../../.agents/skills/requirements-and-traceability/SKILL.md) | Maintain needs, requirements, acceptance criteria, allocations, implementation, evidence, deviations, and candidate links | It does not prescribe the project's issue tracker, requirements database, identifiers, or storage format |
+| Evaluate architectural sufficiency | [`architecture-evaluation`](../../.agents/skills/architecture-evaluation/SKILL.md) | Evaluate concerns, viewpoints, scenarios, alternatives, trade-offs, coherence, and residual risk before expensive-to-reverse choices | It does not replace detailed interface design, implementation, or a project-specific approval authority |
 | Complete the specification handoff | [`spec-driven-development`](../../.agents/skills/spec-driven-development/SKILL.md) | Mature objectives, boundaries, success criteria, commands, structure, style, and testing approach before implementation | Its template is not a full ISO 29148 requirements baseline or traceability system |
 | Decompose controlled scope | [`planning-and-task-breakdown`](../../.agents/skills/planning-and-task-breakdown/SKILL.md) | Produce dependency-ordered, risk-aware increments with acceptance and verification | File-count limits are heuristics, not stage exit criteria |
 | Ground framework/library decisions | [`source-driven-development`](../../.agents/skills/source-driven-development/SKILL.md) | Verify current official sources before choosing or using technology | Source citation does not prove architecture fitness |
@@ -314,13 +317,16 @@ invalidates stakeholder needs, intended outcomes, or the selected solution class
 | Address code-level security | [`security-and-hardening`](../../.agents/skills/security-and-hardening/SKILL.md) | Apply secure boundary, input, authentication, data, and dependency practices | Does not replace threat modeling, security requirements, assurance, or risk acceptance |
 | Measure and improve performance | [`performance-optimization`](../../.agents/skills/performance-optimization/SKILL.md) | Profile against explicit performance requirements before optimizing | Web targets are contextual examples, not universal acceptance thresholds |
 | Preserve technical decisions and knowledge | [`documentation-and-adrs`](../../.agents/skills/documentation-and-adrs/SKILL.md) | Record significant architecture and interface decisions and update public/operational docs | ADRs do not replace requirements, test, configuration, or readiness records |
+| Assemble evidence and make the Development candidate decision | [`development-candidate-readiness`](../../.agents/skills/development-candidate-readiness/SKILL.md) | Reconcile exact candidate identity, scope, traceability, architecture, reviews, V&V, risks, and transition prerequisites | It does not produce or authorize a Production release |
 
 ## Recommended skill sequences
 
 For a normal new capability:
 
 ```text
-spec-driven-development
+work-intake-and-routing
+  → requirements-and-traceability + spec-driven-development
+  → architecture-evaluation (when material concerns or choices exist)
   → planning-and-task-breakdown
   → source-driven-development (when technology facts matter)
   → api-and-interface-design (when boundaries change)
@@ -328,41 +334,42 @@ spec-driven-development
   → security-and-hardening (throughout applicable work)
   → debugging-and-error-recovery (on failures)
   → code-review-and-quality
+  → validation-and-evidence
   → documentation-and-adrs
-  → broader verification + validation + candidate decision
+  → development-candidate-readiness
 ```
 
 For a bug fix:
 
 ```text
-debugging-and-error-recovery
+work-intake-and-routing
+  → debugging-and-error-recovery
   → test-driven-development (reproduction first)
   → incremental-implementation
   → security / performance checks as affected
   → code-review-and-quality
-  → regression verification and candidate evidence
+  → validation-and-evidence
+  → development-candidate-readiness
 ```
 
-For an architecture- or interface-heavy change, define and evaluate concerns,
-quality attributes, alternatives, and contracts before decomposing
-implementation. `api-and-interface-design` supplements this work; it does not
-replace an architecture workflow.
+For an architecture- or interface-heavy change, invoke `architecture-evaluation`
+before decomposing implementation. `api-and-interface-design` supplies detailed
+contract design; `documentation-and-adrs` preserves durable decisions.
 
 ## Current automation gaps
 
-The repository still lacks native skills for:
+The remaining Development integration gaps are:
 
-- ISO 29148-aligned requirements definition, quality checks, baselining, and traceability;
-- ISO 42010-aligned architecture description and scenario-based evaluation;
 - integration strategy and interface-evidence management across components;
 - risk-based verification planning and requirement-to-evidence coverage analysis;
 - stakeholder and quality-in-use validation in representative contexts;
-- candidate evidence aggregation and machine-readable Development decisions;
+- project-specific persistent plan, traceability, evidence-registry, and
+  machine-readable Development-decision implementations;
 - risk-based tailoring and independence decisions for regulated or critical work.
 
-These gaps should be filled with focused skills before creating a broad
-Development orchestrator. An orchestrator should route and check evidence, not
-repeat requirements, architecture, implementation, and V&V instructions.
+The native workflows route and check evidence without prescribing a broad
+orchestrator. Adopting projects should connect them through their existing issue,
+plan, source-control, CI, requirements, evidence, and approval systems.
 
 ## Tailoring
 

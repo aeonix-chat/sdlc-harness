@@ -10,13 +10,16 @@ executable workflows in `.agents/skills/`.
 
 Before changing this repository or applying its SDLC model:
 
-1. Read [`docs/reference-lifecycle.md`](docs/reference-lifecycle.md) for the
+1. Route incoming work with
+   [`work-intake-and-routing`](.agents/skills/work-intake-and-routing/SKILL.md)
+   when its lifecycle path is not already explicit.
+2. Read [`docs/reference-lifecycle.md`](docs/reference-lifecycle.md) for the
    lifecycle model and terminology.
-2. Read the applicable document under [`docs/stages/`](docs/stages/) for its
+3. Read the applicable document under [`docs/stages/`](docs/stages/) for its
    standards basis, required evidence, and decision criteria.
-3. Read [`docs/process.md`](docs/process.md) to select the applicable workflow,
+4. Read [`docs/process.md`](docs/process.md) to select the applicable workflow,
    skill, and required evidence.
-4. Invoke every skill whose description matches the task. If several skills
+5. Invoke every skill whose description matches the task. If several skills
    apply, use them in lifecycle order while avoiding duplicate work.
 
 ## Working rules

@@ -209,8 +209,9 @@ The following process areas apply across all relevant stages:
 | --- | --- |
 | Governance | Owners, policies, authority, and verifiable decisions |
 | Planning and tracking | Objectives, plans, dependencies, status, and forecasts |
+| Work routing | Intake classification, smallest safe workflow, route transitions, and authority |
 | Requirements | Versioning, quality controls, and end-to-end traceability |
-| Architecture | Significant decisions, constraints, and system property evaluation |
+| Architecture | Stakeholder concerns, viewpoints, significant decisions, scenarios, trade-offs, constraints, and system property evaluation |
 | Risk | Identification, assessment, treatment, and explicit residual-risk acceptance |
 | Security and privacy | Secure-by-design controls and evidence throughout the SDLC |
 | Quality and V&V | Quality criteria, verification, validation, independence where required, and bounded claims under the [validation and evidence model](validation-and-evidence.md) |
@@ -218,6 +219,7 @@ The following process areas apply across all relevant stages:
 | Supply chain | Component provenance, integrity, licensing, and risk |
 | Release control | Immutable artifact promotion, environment transitions, release authorization, rollout, rollback, and active-state reconciliation |
 | Operational acceptance | Target-bound operability, observability, recovery, supportability, and acceptance evidence |
+| Candidate readiness | Exact integrated baseline, reconciled lifecycle evidence, residual risk, transition prerequisites, and Development decision |
 | Information management | Record availability, integrity, retention, and disposal |
 | Measurement | Outcome, flow, quality, reliability, and risk metrics |
 | Improvement | Feedback, root-cause analysis, and evolution of the process itself |
