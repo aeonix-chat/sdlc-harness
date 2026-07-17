@@ -219,6 +219,7 @@ The following process areas apply across all relevant stages:
 | Supply chain | Component provenance, integrity, licensing, and risk |
 | Release control | Immutable artifact promotion, environment transitions, release authorization, rollout, rollback, and active-state reconciliation |
 | Operational acceptance | Target-bound operability, observability, recovery, supportability, and acceptance evidence |
+| Operational control | Decision-linked service objectives, credible telemetry, incident recovery, continuity capability, active-state review, and recurring use decisions |
 | Candidate readiness | Exact integrated baseline, reconciled lifecycle evidence, residual risk, transition prerequisites, and Development decision |
 | Information management | Record availability, integrity, retention, and disposal |
 | Measurement | Outcome, flow, quality, reliability, and risk metrics |

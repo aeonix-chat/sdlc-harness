@@ -1,0 +1,4 @@
+interface:
+  display_name: "Continuity and Restore Validation"
+  short_description: "Exercise restore, failover, and continuity capability"
+  default_prompt: "Use $continuity-and-restore-validation to validate backups, restoration, failover, recovery objectives, and continuity evidence."

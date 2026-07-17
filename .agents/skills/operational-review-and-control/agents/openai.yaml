@@ -1,0 +1,4 @@
+interface:
+  display_name: "Operational Review and Control"
+  short_description: "Make recurring evidence-backed operating decisions"
+  default_prompt: "Use $operational-review-and-control to reconcile the active baseline and decide continue, constrain, recover, change, or retire."

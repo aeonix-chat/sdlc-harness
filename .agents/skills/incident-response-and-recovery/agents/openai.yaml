@@ -1,0 +1,4 @@
+interface:
+  display_name: "Incident Response and Recovery"
+  short_description: "Control incidents, recovery, communication, and evidence"
+  default_prompt: "Use $incident-response-and-recovery to assess impact, establish command, recover safely, communicate, and preserve incident evidence."

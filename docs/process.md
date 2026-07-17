@@ -42,6 +42,10 @@ not interpret the table as a mandatory waterfall sequence.
 | [Production](stages/production.md) | Establish artifact identity, composition, provenance, authenticity, and custody | [`artifact-integrity-and-provenance`](../.agents/skills/artifact-integrity-and-provenance/SKILL.md) | Immutable coordinates and digests, composition scope, verified provenance, authenticity policy, and retained evidence |
 | [Production](stages/production.md) | Promote an immutable candidate and control release state | [`release-and-promotion`](../.agents/skills/release-and-promotion/SKILL.md) | Boundary digest checks, promotion and deployment records, authorized release decision, rollback state, and active-baseline reconciliation |
 | [Production](stages/production.md) / [Utilization](stages/utilization.md) | Accept an exact release in an exact operating context | [`operational-acceptance`](../.agents/skills/operational-acceptance/SKILL.md) | Target baseline, exercised operability/recovery evidence, operations and support acknowledgement, conditions, and acceptance decision |
+| [Utilization](stages/utilization.md) | Define service objectives and validate operational telemetry | [`service-objectives-and-telemetry`](../.agents/skills/service-objectives-and-telemetry/SKILL.md) | Decision-linked objectives, reproducible indicators, telemetry coverage, data-quality findings, thresholds, owners, and blind spots |
+| [Utilization](stages/utilization.md) | Coordinate incident control, recovery, communication, and follow-up | [`incident-response-and-recovery`](../.agents/skills/incident-response-and-recovery/SKILL.md) | Active-baseline incident record, impact and chronology, decisions/actions, preserved evidence, verified recovery, communications, and owned follow-up |
+| [Utilization](stages/utilization.md) | Validate restoration, failover, and continuity capability | [`continuity-and-restore-validation`](../.agents/skills/continuity-and-restore-validation/SKILL.md) | Scope-bound exercise, measured recovery/data-loss results, restored behavior/data evidence, gaps, acceptance, and retest |
+| [Utilization](stages/utilization.md) | Review current operating evidence and make the recurring use decision | [`operational-review-and-control`](../.agents/skills/operational-review-and-control/SKILL.md) | Reconciled active baseline, current evidence, disposed risks/exceptions, authorized decision, conditions, actions, and next review |
 | [Production](stages/production.md) | Review candidate and release-change evidence | [`code-review-and-quality`](../.agents/skills/code-review-and-quality/SKILL.md) | Review verdict and disposition of blocking findings |
 | [Production](stages/production.md) | Diagnose pipeline or deployment failures | [`debugging-and-error-recovery`](../.agents/skills/debugging-and-error-recovery/SKILL.md) | Reproduction, root cause, new controlled candidate or pipeline fix, and recurrence guard |
 | [Production](stages/production.md) / [Utilization](stages/utilization.md) | Prepare deployment, authorize rollout, and observe release | [`shipping-and-launch`](../.agents/skills/shipping-and-launch/SKILL.md) | Readiness checks, rollout and rollback plan, thresholds, release decision, and post-release evidence |
@@ -86,9 +90,8 @@ The imported source set does not provide complete workflows for:
 
 - business or mission analysis before a software specification;
 - project-specific requirements/traceability stores and automated coverage reports;
-- service objectives, indicator definitions, telemetry quality, incident
-  command, continuity exercises, quality-in-use measurement, and recurring
-  operational decisions;
+- project-specific telemetry, incident, continuity, quality-in-use, and
+  recurring operational-decision implementations;
 - support intake and disposition, supported-baseline management, coordinated
   vulnerability disclosure, dependency lifecycle monitoring, maintenance
   effectiveness verification, and supportability decisions;

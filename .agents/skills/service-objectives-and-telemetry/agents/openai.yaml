@@ -1,0 +1,4 @@
+interface:
+  display_name: "Service Objectives and Telemetry"
+  short_description: "Connect service objectives to trustworthy signals"
+  default_prompt: "Use $service-objectives-and-telemetry to define decision-linked objectives, indicators, telemetry coverage, and data-quality evidence."

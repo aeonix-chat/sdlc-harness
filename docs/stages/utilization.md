@@ -1,7 +1,7 @@
 # Utilization Stage
 
 Status: **baseline 0.2**
-Sources reviewed: **2026-07-16**
+Sources reviewed: **2026-07-17**
 
 Navigation: Previous: [Production](production.md) ·
 [Lifecycle](../reference-lifecycle.md) · [Process map](../process.md) · Next:
@@ -381,6 +381,10 @@ steady-state operations workflow.
 
 | Need | Use | Boundary in Utilization |
 | --- | --- | --- |
+| Define service objectives, indicators, telemetry coverage, data validity, and alert consequences | [`service-objectives-and-telemetry`](../../.agents/skills/service-objectives-and-telemetry/SKILL.md) | Establishes decision-linked measurement and observability evidence; it does not provide the project's telemetry platform or universal targets |
+| Control an operational or security incident through verified recovery and follow-up | [`incident-response-and-recovery`](../../.agents/skills/incident-response-and-recovery/SKILL.md) | Owns incident coordination, recovery, communication, and evidence; root-cause implementation remains Support/Development work |
+| Exercise backup restoration, failover, disaster recovery, and continuity | [`continuity-and-restore-validation`](../../.agents/skills/continuity-and-restore-validation/SKILL.md) | Produces scope-bound capability evidence; it does not provide project recovery mechanisms or authorize destructive exercises |
+| Reconcile the active baseline and make the recurring operating decision | [`operational-review-and-control`](../../.agents/skills/operational-review-and-control/SKILL.md) | Aggregates current operational evidence into `continue`, `constrain`, `recover`, `change`, or `retire`; it does not silently accept risk or execute irreversible decisions |
 | Accept a release in a target context or reassess after material target change | [`operational-acceptance`](../../.agents/skills/operational-acceptance/SKILL.md) | Establishes target-bound operability, recovery, and support readiness; it does not implement the recurring operational control loop |
 | Observe a newly released change and decide whether to continue or roll back | [`shipping-and-launch`](../../.agents/skills/shipping-and-launch/SKILL.md) | Covers rollout and immediate post-release observation, not ongoing service management |
 | Diagnose a technical operational failure after immediate safety and coordination are established | [`debugging-and-error-recovery`](../../.agents/skills/debugging-and-error-recovery/SKILL.md) | Supplies root-cause discipline; it is not incident command, stakeholder communication, or continuity management |
@@ -395,11 +399,13 @@ matching the event and preserve the resulting evidence in the Utilization loop.
 ## Recommended skill sequences
 
 - **New release observation:** `operational-acceptance` ->
-  `shipping-and-launch` -> verify active baseline -> observe against release
-  thresholds -> continue, constrain, or roll back.
-- **Service incident:** establish incident control and protect users -> recover
-  -> `debugging-and-error-recovery` for diagnosis -> Support/Development change
-  -> Production -> verify recurrence guard in Utilization.
+  `shipping-and-launch` -> `service-objectives-and-telemetry` ->
+  `operational-review-and-control` -> continue, constrain, or roll back.
+- **Service incident:** `incident-response-and-recovery` ->
+  `debugging-and-error-recovery` after immediate control -> Support/Development
+  change -> Production -> `operational-review-and-control`.
+- **Continuity exercise:** `continuity-and-restore-validation` -> corrective
+  work -> retest -> `operational-review-and-control`.
 - **Performance degradation:** verify user impact and data quality ->
   `performance-optimization` -> controlled change -> measure the same objective
   after release.
@@ -415,18 +421,16 @@ matching the event and preserve the resulting evidence in the Utilization loop.
 No additional skill from the reviewed source repository was copied for this
 stage: its launch, debugging, performance, security, and documentation skills
 support parts of Utilization but do not implement its operational control loop.
-Native harness skills are still needed for:
+The remaining Utilization integration gaps are:
 
-- recurring active-baseline drift detection and reconciliation;
-- service objectives, indicator definitions, telemetry quality, and review;
-- incident command, impact assessment, communication, and evidence preservation;
-- backup restoration and continuity exercises;
+- project-specific active-baseline drift detection and reconciliation automation;
 - capacity, dependency, supplier, certificate, and lifecycle forecasting;
 - quality-in-use and outcome measurement;
-- operational review and machine-readable recurring decisions.
+- project-specific telemetry, incident, recovery, service-catalog, evidence,
+  and machine-readable recurring-decision implementations.
 
-Each future skill should implement one repeatable workflow and refer to this
-document for lifecycle policy rather than duplicating the policy in the skill.
+Adopting projects should connect the native workflows to existing operating
+systems and expose deterministic evidence-producing commands or APIs.
 
 ## Tailoring
 

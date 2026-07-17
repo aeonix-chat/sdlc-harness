@@ -69,6 +69,14 @@ Stage-specific standards, evidence, and decision criteria are documented in:
   promotion, deployment state, release authorization, rollout, and rollback.
 - [`docs/operational-acceptance.md`](docs/operational-acceptance.md) — target-bound
   operability, observability, recovery, and support acceptance.
+- [`docs/service-objectives-and-telemetry.md`](docs/service-objectives-and-telemetry.md)
+  — decision-linked operational objectives, indicators, coverage, and signal validity.
+- [`docs/incident-response-and-recovery.md`](docs/incident-response-and-recovery.md)
+  — incident command, containment, recovery, communication, and follow-up.
+- [`docs/continuity-and-restore-validation.md`](docs/continuity-and-restore-validation.md)
+  — backup restoration, failover, recovery objectives, and continuity exercises.
+- [`docs/operational-review-and-control.md`](docs/operational-review-and-control.md)
+  — active-baseline reconciliation and recurring operating decisions.
 - [`docs/stages/`](docs/stages/) — standards-based guidance and evidence
   contracts for each lifecycle stage.
 - [`AGENTS.md`](AGENTS.md) — durable repository guidance for agents.
@@ -83,7 +91,8 @@ standards-grounded workflow, evidence contract, decision criteria, tailoring
 guidance, and skill routing. Native workflows cover work routing, requirements
 traceability, architecture evaluation, candidate readiness, validation evidence,
 artifact integrity and provenance, release promotion, and operational acceptance;
-project-specific machine-readable schemas and implementations remain integration work. See
+service measurement, incident recovery, continuity validation, and operational
+review; project-specific machine-readable schemas and implementations remain integration work. See
 the [process map](docs/process.md#known-coverage-gaps).
 
 ## Validation
