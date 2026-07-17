@@ -1,0 +1,4 @@
+interface:
+  display_name: "Operational Acceptance"
+  short_description: "Prove a release is operable in its target context"
+  default_prompt: "Use $operational-acceptance to assess target readiness, operability, supportability, recovery, and operational acceptance."

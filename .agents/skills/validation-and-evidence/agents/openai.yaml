@@ -1,0 +1,4 @@
+interface:
+  display_name: "Validation and Evidence"
+  short_description: "Turn checks into bounded, auditable claims"
+  default_prompt: "Use $validation-and-evidence to select validation, run project-provided checks, and report bounded evidence-backed claims."

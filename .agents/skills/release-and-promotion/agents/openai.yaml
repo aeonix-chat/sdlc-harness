@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release and Promotion"
+  short_description: "Promote immutable releases through controlled stages"
+  default_prompt: "Use $release-and-promotion to promote an immutable candidate through environments and record the release decision."

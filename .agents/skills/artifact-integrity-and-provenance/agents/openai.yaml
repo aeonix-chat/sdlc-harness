@@ -1,0 +1,4 @@
+interface:
+  display_name: "Artifact Integrity and Provenance"
+  short_description: "Bind artifacts to trusted inputs and evidence"
+  default_prompt: "Use $artifact-integrity-and-provenance to establish artifact identity, composition, provenance, integrity, and verification evidence."
