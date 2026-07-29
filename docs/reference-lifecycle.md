@@ -17,6 +17,8 @@ The executable workflow mapping for this model is defined in the
 [SDLC process and skill map](process.md).
 The cross-cutting rules for converting checks into decision-grade claims are
 defined in [Validation and Evidence](validation-and-evidence.md).
+Agent execution across tasks and checkpoints is governed by
+[Execution Continuity](execution-continuity.md).
 
 The model applies to software products, platforms, and services regardless of
 whether they use agile, continuous delivery, iterative, incremental, or
@@ -209,6 +211,7 @@ The following process areas apply across all relevant stages:
 | --- | --- |
 | Governance | Owners, policies, authority, and verifiable decisions |
 | Planning and tracking | Objectives, plans, dependencies, status, and forecasts |
+| Execution continuity | Authorized delivery boundaries, continuous progress, explicit stop conditions, and evidence-backed blocker reporting |
 | Work routing | Intake classification, smallest safe workflow, route transitions, and authority |
 | Requirements | Versioning, quality controls, and end-to-end traceability |
 | Architecture | Stakeholder concerns, viewpoints, significant decisions, scenarios, trade-offs, constraints, and system property evaluation |

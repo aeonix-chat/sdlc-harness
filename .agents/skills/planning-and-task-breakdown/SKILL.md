@@ -1,9 +1,13 @@
 ---
 name: planning-and-task-breakdown
-description: Breaks work into ordered tasks. Use when you have a spec or clear requirements and need to break work into implementable tasks. Use when a task feels too large to start, when you need to estimate scope, or when parallel work is possible.
+description: Creates, maintains, and executes ordered implementation plans without artificial pauses inside an authorized delivery boundary. Use when requirements must be broken into implementable tasks, a plan is being executed or updated, work feels too large to start, scope must be estimated, or parallel work is possible.
 ---
 
 # Planning and Task Breakdown
+
+Read [`../../../docs/execution-continuity.md`](../../../docs/execution-continuity.md)
+before applying this workflow. A plan structures execution; it must not create
+permission prompts or artificial stopping points inside an authorized boundary.
 
 ## Overview
 
@@ -119,8 +123,12 @@ Add explicit checkpoints:
 - [ ] All tests pass
 - [ ] Application builds without errors
 - [ ] Core user flow works end-to-end
-- [ ] Review with human before proceeding
+- [ ] Record results and continue to the next planned task
 ```
+
+Require human review at a checkpoint only when local policy assigns a decision
+there or proceeding needs new authority. Otherwise a checkpoint is an internal
+verification and recovery point.
 
 ## Task Sizing Guidelines
 
@@ -193,6 +201,19 @@ When multiple agents or sessions are available:
 - **Must be sequential:** Database migrations, shared state changes, dependency chains
 - **Needs coordination:** Features that share an API contract (define the contract first, then parallelize)
 
+## Execution Hardness
+
+- Treat the user-authorized plan, phase, or task group as the delivery boundary.
+- After implementation is authorized, execute every task and verification step
+  in that boundary without yielding after intermediate tasks or checkpoints.
+- Update plan state as reality changes and continue; do not ask whether to start
+  the next already-authorized task.
+- Stop early only under the allowed conditions in the execution continuity
+  contract: real blocker, new authority, required user intervention, scope
+  change, or user interruption.
+- A completed task, commit, checkpoint, green test, long duration, large diff,
+  context compaction, or recoverable failure is not a stop condition.
+
 ## Common Rationalizations
 
 | Rationalization | Reality |
@@ -220,4 +241,5 @@ Before starting implementation, confirm:
 - [ ] Task dependencies are identified and ordered correctly
 - [ ] No task touches more than ~5 files
 - [ ] Checkpoints exist between major phases
-- [ ] The human has reviewed and approved the plan
+- [ ] Any required approval boundary is explicit and tied to authority or policy
+- [ ] The authorized execution boundary and allowed stop conditions are explicit

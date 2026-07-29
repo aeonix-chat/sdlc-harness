@@ -57,6 +57,9 @@ Stage-specific standards, evidence, and decision criteria are documented in:
   claim, assessment, evidence, and assurance-profile contract.
 - [`docs/work-intake-and-routing.md`](docs/work-intake-and-routing.md) —
   risk- and uncertainty-based routing from incoming work to SDLC workflows.
+- [`docs/execution-continuity.md`](docs/execution-continuity.md) — authorized
+  delivery boundaries, continuous execution, and the only allowed early-stop
+  conditions.
 - [`docs/requirements-and-traceability.md`](docs/requirements-and-traceability.md)
   — requirements quality, baselines, change impact, and lifecycle evidence graph.
 - [`docs/architecture-evaluation.md`](docs/architecture-evaluation.md) —

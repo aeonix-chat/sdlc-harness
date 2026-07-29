@@ -5,6 +5,10 @@ description: Delivers changes incrementally. Use when implementing any feature o
 
 # Incremental Implementation
 
+Read [`../../../docs/execution-continuity.md`](../../../docs/execution-continuity.md)
+before applying this workflow. Increments are internal delivery and recovery
+units, not prompts to return control to the user.
+
 ## Overview
 
 Build in thin vertical slices — implement one piece, test it, verify it, then expand. Avoid implementing an entire feature in one pass. Each increment should leave the system in a working, testable state. This is the execution discipline that makes large features manageable.
@@ -40,6 +44,16 @@ For each slice:
 3. **Verify** — confirm the slice works as expected (tests pass, build succeeds, manual check)
 4. **Commit** -- save your progress with a descriptive message (see `git-workflow-and-versioning` for atomic commit guidance)
 5. **Move to the next slice** — carry forward, don't restart
+
+Continue this cycle until the complete authorized boundary and its planned
+verification are complete. Report checkpoints in commentary while continuing.
+Do not turn an intermediate commit, successful check, or completed slice into a
+final response.
+
+Stop before completion only for a real blocker after safe in-scope recovery is
+exhausted, a need for new authority, required user intervention, a material
+scope change, or user interruption. Diagnose failures and continue independent
+work before claiming a blocker.
 
 ## Slicing Strategies
 
@@ -243,3 +257,5 @@ After completing all increments for a task:
 - [ ] The build is clean
 - [ ] The feature works end-to-end as specified
 - [ ] No uncommitted changes remain
+- [ ] The full authorized boundary is complete, not only the latest increment
+- [ ] Any early stop satisfies and reports an allowed execution-continuity condition

@@ -39,6 +39,13 @@ Before changing this repository or applying its SDLC model:
 - Before every commit, pull request, or other publication, scan the complete
   repository for absolute local filesystem paths, PII, credentials, and secret
   material. Publication safety is a blocking validation, not an advisory review.
+- Follow the [execution continuity contract](docs/execution-continuity.md).
+  After work is authorized, continue through every in-scope task and required
+  verification. Return control before completion only for a real blocker, new
+  authority, required user intervention, scope change, or user interruption.
+  Plans, phases, checkpoints, commits, green checks, tool errors with safe
+  alternatives, implementation size, and context compaction are not stopping
+  points.
 
 ## Definition of done
 
