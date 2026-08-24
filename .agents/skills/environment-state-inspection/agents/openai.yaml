@@ -1,0 +1,4 @@
+interface:
+  display_name: "Environment State Inspection"
+  short_description: "Inspect active state without changing it"
+  default_prompt: "Use $environment-state-inspection to resolve active environment state, drift, and evidence through a read-only boundary."

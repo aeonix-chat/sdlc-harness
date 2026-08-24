@@ -29,6 +29,14 @@ Measure before optimizing. Performance work without measurement is guessing — 
 
 ## The Optimization Workflow
 
+### Distributed attribution gate
+
+When latency crosses client, edge, service, database, or provider boundaries,
+use `observability-by-design` first. Separate network timing, service phases,
+external dependency time, and resource saturation before selecting a process
+to profile. A profiler explains a selected process; it does not locate an
+unattributed distributed delay.
+
 ```
 1. MEASURE  → Establish baseline with real data
 2. IDENTIFY → Find the actual bottleneck (not assumed)

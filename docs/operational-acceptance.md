@@ -91,6 +91,32 @@ works. Exercise critical recovery and response paths at depth proportional to ri
 - Transfer the verified active baseline, operating context, limitations, and
   evidence to Utilization and Support after release.
 
+## Operational handoff contract
+
+When another team or system will deploy, operate, support, or recover the
+release, provide a self-contained handoff bound to the exact candidate and
+target. It should identify:
+
+- immutable artifact and source identities and where their verified
+  coordinates come from;
+- target-owned prerequisites and unresolved placeholders without inventing values;
+- ordered deployment, configuration, migration, and synchronization actions;
+- secret document and consumer identities without plaintext;
+- observability, readiness, acceptance, rollback, restore, and escalation checks;
+- known limitations, residual risks, conditions, owners, and decision authority;
+- what has been verified, what remains operator action, and what would
+  invalidate the handoff.
+
+Do not mix independently built release components when the release-unit
+contract requires a coherent set. Do not use moving aliases when immutable
+identity is required. Preserve stable environment identity and credentials
+across ordinary upgrades unless an authorized migration or rotation says
+otherwise. Unknown environment-owned values remain explicit inputs.
+
+A handoff is information and acknowledgement, not evidence that its commands
+were executed. After execution, reconcile the actual active state and record
+acceptance findings separately.
+
 ## Decision rules
 
 Use `accept` only when mandatory criteria are satisfied and accountable owners

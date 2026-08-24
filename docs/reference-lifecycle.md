@@ -216,7 +216,7 @@ The following process areas apply across all relevant stages:
 | Requirements | Versioning, quality controls, and end-to-end traceability |
 | Architecture | Stakeholder concerns, viewpoints, significant decisions, scenarios, trade-offs, constraints, and system property evaluation |
 | Risk | Identification, assessment, treatment, and explicit residual-risk acceptance |
-| Security and privacy | Secure-by-design controls and evidence throughout the SDLC |
+| Security and privacy | Secure-by-design controls, secret custody and rotation, and evidence throughout the SDLC |
 | Quality and V&V | Quality criteria, verification, validation, independence where required, and bounded claims under the [validation and evidence model](validation-and-evidence.md) |
 | Configuration and change | Version identification, baselines, and controlled changes |
 | Supply chain | Component provenance, integrity, licensing, and risk |
@@ -225,7 +225,7 @@ The following process areas apply across all relevant stages:
 | Operational control | Decision-linked service objectives, credible telemetry, incident recovery, continuity capability, active-state review, and recurring use decisions |
 | Candidate readiness | Exact integrated baseline, reconciled lifecycle evidence, residual risk, transition prerequisites, and Development decision |
 | Information management | Record availability, integrity, retention, and disposal |
-| Measurement | Outcome, flow, quality, reliability, and risk metrics |
+| Measurement | Outcome, flow, quality, reliability, risk metrics, and bounded diagnostic signals |
 | Improvement | Feedback, root-cause analysis, and evolution of the process itself |
 
 Security is not a final-stage gate. [NIST SP 800-218 SSDF 1.1][nist-ssdf]

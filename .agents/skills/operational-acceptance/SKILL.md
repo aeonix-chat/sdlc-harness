@@ -28,8 +28,11 @@ objectives, telemetry, runbooks, exercises, thresholds, and decision authority.
    scope, diagnostics, supplier contacts, and vulnerability intake with owners.
 7. Record `accept`, `accept-with-conditions`, `hold`, or `reject`. Bind
    conditions to owner, compensating control, expiry, review trigger, and rollback threshold.
-8. Transfer accepted active-baseline identity, operating context, limitations,
-   and evidence to Utilization and Support.
+8. Produce a self-contained handoff containing immutable release identity,
+   target prerequisites, ordered operator actions, secret identities without
+   values, acceptance and rollback checks, limitations, owners, and invalidation
+   conditions. After execution, reconcile actual active state before transfer
+   to Utilization and Support.
 
 ## Guardrails
 
@@ -40,6 +43,9 @@ objectives, telemetry, runbooks, exercises, thresholds, and decision authority.
 - Acceptance is target-specific and expires after material release,
   configuration, topology, provider, assumption, or freshness changes.
 - Operational acceptance informs release authority; it does not replace it.
+- A prepared handoff proves information readiness, not deployment or acceptance.
+- Do not invent target-owned values or substitute moving artifact aliases for
+  required immutable identities.
 
 ## Completion
 

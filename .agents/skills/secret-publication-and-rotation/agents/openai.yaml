@@ -1,0 +1,4 @@
+interface:
+  display_name: "Secret Publication and Rotation"
+  short_description: "Publish and rotate secrets without plaintext exposure"
+  default_prompt: "Use $secret-publication-and-rotation to prepare or execute a controlled secret change with safe custody and verification."

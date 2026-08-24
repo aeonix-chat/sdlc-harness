@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release Notes"
+  short_description: "Turn release evidence into audience-facing notes"
+  default_prompt: "Use $release-notes to draft evidence-backed notes for an exact release boundary without publishing the release."

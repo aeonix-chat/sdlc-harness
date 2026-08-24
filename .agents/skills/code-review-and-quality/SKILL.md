@@ -7,7 +7,7 @@ description: Conducts multi-axis code review. Use before merging any change. Use
 
 ## Overview
 
-Multi-dimensional code review with quality gates. Every change gets reviewed before merge — no exceptions. Review covers five axes: correctness, readability, architecture, security, and performance.
+Multi-dimensional code review with quality gates. Every change gets reviewed before merge — no exceptions. Review covers correctness, readability, architecture, security, performance, and observability.
 
 **The approval standard:** Approve a change when it definitely improves overall code health, even if it isn't perfect. Perfect code doesn't exist — the goal is continuous improvement. Don't block a change because it isn't exactly how you would have written it. If it improves the codebase and follows the project's conventions, approve it.
 
@@ -19,7 +19,7 @@ Multi-dimensional code review with quality gates. Every change gets reviewed bef
 - When refactoring existing code
 - After any bug fix (review both the fix and the regression test)
 
-## The Five-Axis Review
+## Review Axes
 
 Every review evaluates code across these dimensions:
 
@@ -79,6 +79,16 @@ For detailed profiling and optimization, see `performance-optimization`. Does th
 - Any unnecessary re-renders in UI components?
 - Any missing pagination on list endpoints?
 - Any large objects created in hot paths?
+
+### 6. Observability
+
+For runtime-facing changes, apply `observability-by-design`.
+
+- Are new latency, failure, queueing, dependency, resource, degradation, and
+  lifecycle states distinguishable at one owning boundary?
+- Are units, labels, fields, and allowed values stable, bounded, and privacy-safe?
+- Is telemetry failure isolated from product behavior?
+- Does the evidence support only the stated signal and environment claims?
 
 ## Change Sizing
 
@@ -141,7 +151,7 @@ Tests reveal intent and coverage:
 
 ### Step 3: Review the Implementation
 
-Walk through the code with the five axes in mind:
+Walk through the code with all review axes in mind:
 
 ```
 For each file changed:
@@ -150,6 +160,7 @@ For each file changed:
 3. Architecture: Does this fit the system?
 4. Security: Any vulnerabilities?
 5. Performance: Any bottlenecks?
+6. Observability: Are new runtime states safely diagnosable?
 ```
 
 ### Step 4: Categorize Findings
@@ -300,6 +311,12 @@ Part of code review is dependency review:
 - [ ] No N+1 patterns
 - [ ] No unbounded operations
 - [ ] Pagination on list endpoints
+
+### Observability
+- [ ] New material runtime states are distinguishable at an owning boundary
+- [ ] Signal labels and event fields are bounded and privacy-safe
+- [ ] Telemetry failure is isolated from product behavior
+- [ ] Evidence does not overstate environment or service-objective claims
 
 ### Verification
 - [ ] Tests pass

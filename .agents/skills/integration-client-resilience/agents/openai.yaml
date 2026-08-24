@@ -1,0 +1,4 @@
+interface:
+  display_name: "Integration Client Resilience"
+  short_description: "Bound deadlines, retries, cancellation, and resources"
+  default_prompt: "Use $integration-client-resilience to design a bounded outbound client contract and deterministic evidence."

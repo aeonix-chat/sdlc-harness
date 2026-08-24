@@ -48,11 +48,14 @@ ASSUMPTIONS I'M MAKING:
 
 Don't silently fill in ambiguous requirements. The spec's entire purpose is to surface misunderstandings *before* code gets written — assumptions are the most dangerous form of misunderstanding.
 
-**Write a spec document covering these six core areas:**
+**Write a spec document covering these eight core areas:**
 
 1. **Objective** — What are we building and why? Who is the user? What does success look like?
 
-2. **Commands** — Full executable commands with flags, not just tool names.
+2. **Tech Stack** — Framework, language, existing dependencies, and versioned
+   standards or SDK contracts adopted by the change.
+
+3. **Commands** — Full executable commands with flags, not just tool names.
    ```
    Build: npm run build
    Test: npm test -- --coverage
@@ -60,7 +63,7 @@ Don't silently fill in ambiguous requirements. The spec's entire purpose is to s
    Dev: npm run dev
    ```
 
-3. **Project Structure** — Where source code lives, where tests go, where docs belong.
+4. **Project Structure** — Where source code lives, where tests go, where docs belong.
    ```
    src/           → Application source code
    src/components → React components
@@ -70,14 +73,18 @@ Don't silently fill in ambiguous requirements. The spec's entire purpose is to s
    docs/          → Documentation
    ```
 
-4. **Code Style** — One real code snippet showing your style beats three paragraphs describing it. Include naming conventions, formatting rules, and examples of good output.
+5. **Code Style** — One real code snippet showing your style beats three paragraphs describing it. Include naming conventions, formatting rules, and examples of good output.
 
-5. **Testing Strategy** — What framework, where tests live, coverage expectations, which test levels for which concerns.
+6. **Testing Strategy** — What framework, where tests live, coverage expectations, which test levels for which concerns.
 
-6. **Boundaries** — Three-tier system:
+7. **Boundaries** — Three-tier system:
    - **Always do:** Run tests before commits, follow naming conventions, validate inputs
    - **Ask first:** Database schema changes, adding dependencies, changing CI config
    - **Never do:** Commit secrets, edit vendor directories, remove failing tests without approval
+
+8. **Operability** — For runtime-facing work, apply `observability-by-design`.
+   Record phase ownership, diagnostic signals, privacy/cardinality constraints,
+   environment handoff, and blind spots, or a bounded not-applicable rationale.
 
 **Spec template:**
 
@@ -106,6 +113,9 @@ Don't silently fill in ambiguous requirements. The spec's entire purpose is to s
 - Always: [...]
 - Ask first: [...]
 - Never: [...]
+
+## Operability
+[Observability impact, signal ownership and evidence, or not-applicable rationale]
 
 ## Success Criteria
 [How we'll know this is done — specific, testable conditions]
@@ -193,7 +203,7 @@ The spec is a living document, not a one-time artifact:
 
 Before proceeding to implementation, confirm:
 
-- [ ] The spec covers all six core areas
+- [ ] The spec covers all eight core areas
 - [ ] The human has reviewed and approved the spec
 - [ ] Success criteria are specific and testable
 - [ ] Boundaries (Always/Ask First/Never) are defined

@@ -409,6 +409,9 @@ data, vulnerabilities, contracts, knowledge, and other obligations.
 | Need | Use | Boundary in Support |
 | --- | --- | --- |
 | Reproduce, localize, diagnose, and guard against recurrence | [`debugging-and-error-recovery`](../../.agents/skills/debugging-and-error-recovery/SKILL.md) | Technical diagnosis only; it does not set priority, accept risk, coordinate disclosure, or close the support item |
+| Inspect the affected active environment without mutation | [`environment-state-inspection`](../../.agents/skills/environment-state-inspection/SKILL.md) | Resolves exact active identity, drift, recent errors, and access gaps as support evidence | It does not repair the environment or close the support item |
+| Correct an outbound integration contract | [`integration-client-resilience`](../../.agents/skills/integration-client-resilience/SKILL.md) | Defines bounded deadlines, retries, cancellation, resources, and unknown outcomes for the maintenance change | It does not replace diagnosis, requirements disposition, implementation, or release controls |
+| Publish or rotate a support-related secret | [`secret-publication-and-rotation`](../../.agents/skills/secret-publication-and-rotation/SKILL.md) | Controls exact inventory, authority, custody, consumer transition, verification, and rotation closure | Support urgency does not automatically authorize credential mutation or revocation |
 | Specify a material corrective, adaptive, perfective, or preventive change | [`spec-driven-development`](../../.agents/skills/spec-driven-development/SKILL.md) | Use for product change contracts, not routine intake administration |
 | Break an approved maintenance change into controlled work | [`planning-and-task-breakdown`](../../.agents/skills/planning-and-task-breakdown/SKILL.md) | Requires approved scope and acceptance criteria |
 | Demonstrate failure and drive the behavioral fix | [`test-driven-development`](../../.agents/skills/test-driven-development/SKILL.md) | A regression test supports resolution but does not replace impact or effectiveness analysis |
@@ -437,10 +440,10 @@ data, vulnerabilities, contracts, knowledge, and other obligations.
 
 ## Current automation gaps
 
-No additional skill from the reviewed source repository was copied for this
-stage. Its debugging, security, development, launch, and migration workflows
-cover portions of maintenance but not the Support control system. Native
-harness skills are still needed for:
+Existing and newly generalized skills cover debugging, environment inspection,
+integration resilience, secret transitions, security, development, launch, and
+migration portions of maintenance, but not the complete Support control system.
+Native harness skills are still needed for:
 
 - support intake, deduplication, classification, prioritization, and disposition;
 - supported-baseline and compatibility-matrix management;

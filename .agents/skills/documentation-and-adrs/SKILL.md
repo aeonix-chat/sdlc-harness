@@ -237,6 +237,19 @@ For shipped features:
 - Task list now loads 50 items per page (was 20) for better UX (#126)
 ```
 
+## Operational Handoffs
+
+For deployment, operations, support, or recovery handoffs, bind instructions to
+the exact release and target. State confirmed inputs, immutable artifact
+identities, target-owned prerequisites, ordered actions, secret identities
+without values, acceptance and rollback checks, limitations, owners, and
+invalidation conditions.
+
+Keep unknown environment data as explicit placeholders. Separate repository
+expectations from live observations and prepared instructions from executed
+evidence. A handoff must not claim that deployment, secret publication,
+acceptance, or recovery happened merely because the procedure is documented.
+
 ## Documentation for Agents
 
 Special consideration for AI agent context:

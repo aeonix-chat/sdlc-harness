@@ -309,6 +309,8 @@ invalidates stakeholder needs, intended outcomes, or the selected solution class
 | Decompose controlled scope | [`planning-and-task-breakdown`](../../.agents/skills/planning-and-task-breakdown/SKILL.md) | Produce dependency-ordered, risk-aware increments with acceptance and verification | File-count limits are heuristics, not stage exit criteria |
 | Ground framework/library decisions | [`source-driven-development`](../../.agents/skills/source-driven-development/SKILL.md) | Verify current official sources before choosing or using technology | Source citation does not prove architecture fitness |
 | Design public boundaries and contracts | [`api-and-interface-design`](../../.agents/skills/api-and-interface-design/SKILL.md) | Apply contract-first design to APIs, modules, and service boundaries | Does not create a complete architecture description or evaluate all quality attributes |
+| Design outbound integration failure and resource behavior | [`integration-client-resilience`](../../.agents/skills/integration-client-resilience/SKILL.md) | Define operation phases, deadline hierarchy, retry ownership, cancellation, side effects, bounded resources, and deterministic evidence | It does not authorize a new integration, dependency, protocol, or production policy |
+| Design runtime diagnostic signals | [`observability-by-design`](../../.agents/skills/observability-by-design/SKILL.md) | Disposition impact and define owned, bounded, privacy-safe, failure-isolated signals and evidence | It does not define production SLOs, dashboards, alerts, or prove live collection |
 | Implement coherent increments | [`incremental-implementation`](../../.agents/skills/incremental-implementation/SKILL.md) | Deliver one safe, compilable, rollback-friendly vertical or risk slice | Must consume controlled requirements and update traceability |
 | Develop behavior with tests | [`test-driven-development`](../../.agents/skills/test-driven-development/SKILL.md) | Use red-green-refactor and regression tests for logic and bug fixes | TDD is not full verification, validation, or proof of test adequacy |
 | Diagnose failures | [`debugging-and-error-recovery`](../../.agents/skills/debugging-and-error-recovery/SKILL.md) | Reproduce, localize, reduce, fix root cause, guard, and verify | A fix still requires requirement and evidence updates |
@@ -330,6 +332,8 @@ work-intake-and-routing
   → planning-and-task-breakdown
   → source-driven-development (when technology facts matter)
   → api-and-interface-design (when boundaries change)
+  → integration-client-resilience (when outbound boundaries change)
+  → observability-by-design (when runtime diagnostic impact is material)
   → incremental-implementation + test-driven-development
   → security-and-hardening (throughout applicable work)
   → debugging-and-error-recovery (on failures)

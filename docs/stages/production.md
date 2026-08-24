@@ -326,6 +326,9 @@ candidate itself must change.
 | Review the candidate and release change | [`code-review-and-quality`](../../.agents/skills/code-review-and-quality/SKILL.md) | Confirm change intent, verification quality, security, architecture, and performance before candidate acceptance | Code review does not authorize production, verify build provenance, or replace release evidence review |
 | Check code-level security and dependencies | [`security-and-hardening`](../../.agents/skills/security-and-hardening/SKILL.md) | Use applicable secret, dependency, configuration, and boundary checks | It does not secure build infrastructure, signing identities, artifact stores, provenance, or supplier tiers |
 | Record release decisions and consumer information | [`documentation-and-adrs`](../../.agents/skills/documentation-and-adrs/SKILL.md) | Update release notes, operating information, and consequential decisions | ADRs and prose do not replace machine-verifiable release identity and provenance |
+| Draft and approve audience-facing release notes | [`release-notes`](../../.agents/skills/release-notes/SKILL.md) | Translate the complete release boundary into bounded product claims, compatibility actions, and limitations | It does not build, tag, promote, publish, deploy, or authorize the release |
+| Publish or rotate release-related secrets | [`secret-publication-and-rotation`](../../.agents/skills/secret-publication-and-rotation/SKILL.md) | Preserve controlled inventory, plaintext custody, concurrency, consumer verification, and rotation closure | Deployment does not imply secret-write or rotation authority |
+| Inspect target active state without mutation | [`environment-state-inspection`](../../.agents/skills/environment-state-inspection/SKILL.md) | Resolve active artifact/configuration identities and separate desired, reported, and observed state | Read-only inspection does not deploy, repair, accept, or authorize release |
 | Diagnose pipeline or deployment failures | [`debugging-and-error-recovery`](../../.agents/skills/debugging-and-error-recovery/SKILL.md) | Reproduce, localize, fix root cause, guard recurrence, and re-run affected controls | Do not patch mutable production artifacts; create a new candidate/release when payload changes |
 
 ## Recommended skill sequence
@@ -342,7 +345,7 @@ code-review-and-quality (candidate evidence review)
   → release-and-promotion
   → shipping-and-launch (rollout observation)
   → Utilization observation or rollback
-  → documentation-and-adrs (durable decisions and consumer information)
+  → release-notes and documentation-and-adrs (consumer information and durable decisions)
 ```
 
 Invoke `debugging-and-error-recovery` on failures, but do not repair an artifact

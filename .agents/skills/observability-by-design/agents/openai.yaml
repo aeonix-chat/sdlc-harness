@@ -1,0 +1,4 @@
+interface:
+  display_name: "Observability by Design"
+  short_description: "Design safe and testable runtime diagnostics"
+  default_prompt: "Use $observability-by-design to define owned, bounded, privacy-safe diagnostic signals and their evidence contract."

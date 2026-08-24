@@ -382,6 +382,10 @@ steady-state operations workflow.
 | Need | Use | Boundary in Utilization |
 | --- | --- | --- |
 | Define service objectives, indicators, telemetry coverage, data validity, and alert consequences | [`service-objectives-and-telemetry`](../../.agents/skills/service-objectives-and-telemetry/SKILL.md) | Establishes decision-linked measurement and observability evidence; it does not provide the project's telemetry platform or universal targets |
+| Design or correct runtime diagnostic signals | [`observability-by-design`](../../.agents/skills/observability-by-design/SKILL.md) | Defines owned, bounded, privacy-safe instrumentation and repository evidence before an operational objective consumes it | It does not define SLOs or prove live collection, dashboards, or alert delivery |
+| Inspect active environment state without mutation | [`environment-state-inspection`](../../.agents/skills/environment-state-inspection/SKILL.md) | Resolves active identities, drift, readiness, recent errors, and access gaps while separating desired, reported, and observed state | It does not repair, deploy, accept risk, or make the recurring operating decision |
+| Publish or rotate operational secrets | [`secret-publication-and-rotation`](../../.agents/skills/secret-publication-and-rotation/SKILL.md) | Controls inventory, authority, custody, consumer transition, verification, and rotation closure | Incident or deployment authority does not automatically authorize a secret mutation |
+| Design bounded outbound dependency behavior | [`integration-client-resilience`](../../.agents/skills/integration-client-resilience/SKILL.md) | Defines deadline, retry, cancellation, side-effect, and resource contracts for operationally exposed integrations | Product changes still flow through Support and Development controls |
 | Control an operational or security incident through verified recovery and follow-up | [`incident-response-and-recovery`](../../.agents/skills/incident-response-and-recovery/SKILL.md) | Owns incident coordination, recovery, communication, and evidence; root-cause implementation remains Support/Development work |
 | Exercise backup restoration, failover, disaster recovery, and continuity | [`continuity-and-restore-validation`](../../.agents/skills/continuity-and-restore-validation/SKILL.md) | Produces scope-bound capability evidence; it does not provide project recovery mechanisms or authorize destructive exercises |
 | Reconcile the active baseline and make the recurring operating decision | [`operational-review-and-control`](../../.agents/skills/operational-review-and-control/SKILL.md) | Aggregates current operational evidence into `continue`, `constrain`, `recover`, `change`, or `retire`; it does not silently accept risk or execute irreversible decisions |
@@ -418,10 +422,10 @@ matching the event and preserve the resulting evidence in the Utilization loop.
 
 ## Current automation gaps
 
-No additional skill from the reviewed source repository was copied for this
-stage: its launch, debugging, performance, security, and documentation skills
-support parts of Utilization but do not implement its operational control loop.
-The remaining Utilization integration gaps are:
+Native harness workflows now cover service objectives and telemetry,
+observability design, read-only environment inspection, secret transitions,
+integration resilience, incident response and recovery, continuity exercises,
+and recurring operational review. The remaining Utilization integration gaps are:
 
 - project-specific active-baseline drift detection and reconciliation automation;
 - capacity, dependency, supplier, certificate, and lifecycle forecasting;
