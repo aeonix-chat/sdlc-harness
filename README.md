@@ -60,6 +60,8 @@ Stage-specific standards, evidence, and decision criteria are documented in:
 - [`docs/execution-continuity.md`](docs/execution-continuity.md) — authorized
   delivery boundaries, continuous execution, and the only allowed early-stop
   conditions.
+- [`docs/subagent-orchestration.md`](docs/subagent-orchestration.md) — approved,
+  inspectable delegation with explicit agent configuration and run evidence.
 - [`docs/requirements-and-traceability.md`](docs/requirements-and-traceability.md)
   — requirements quality, baselines, change impact, and lifecycle evidence graph.
 - [`docs/architecture-evaluation.md`](docs/architecture-evaluation.md) —

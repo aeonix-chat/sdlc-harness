@@ -1,0 +1,4 @@
+interface:
+  display_name: "Subagent Orchestration"
+  short_description: "Plan, disclose, and audit Codex subagent runs"
+  default_prompt: "Use $subagent-orchestration to prepare and execute a transparent subagent run."
